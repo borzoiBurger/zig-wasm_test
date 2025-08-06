@@ -12,15 +12,15 @@ pub fn build(b: *std.Build) void {
         target = b.graph.host;
     }
 
-    const optimize: std.builtin.OptimizeMode = .ReleaseSmall;
+    // const optimize: std.builtin.OptimizeMode = .ReleaseSmall;
 
     const exe = b.addExecutable(.{
         .name = "hello",
         .root_source_file = b.path("hello.zig"),
         .target = target, //
-        .optimize = optimize,
+        // .optimize = optimize,
     });
-    exe.entry = .disabled;
+    // exe.entry = .disabled;
 
     if (!wasm) {
         const run_exe = b.addRunArtifact(exe);
